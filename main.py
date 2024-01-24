@@ -3,6 +3,7 @@ import csv
 
 pokemons = []
 
+
 # https://www.w3schools.com/python/python_file_handling.asp
 # https://www.w3schools.in/python/file-handling
 with open('pokemon.csv', newline='') as csv_file:
@@ -10,8 +11,6 @@ with open('pokemon.csv', newline='') as csv_file:
 
     for row in file_reader:
         pokemons.append(row[0])
-
-# print(pokemons)
 
 print("Pokemon list command:")
 
@@ -27,20 +26,34 @@ while True:
 
     if choice == '1':
         # https://www.w3schools.com/python/python_lists_access.asp
-        pass
+        num = int(input("Enter pokemon number: "))
+        print(pokemons[num])
     elif choice == '2':
         # https://www.w3schools.com/python/python_lists_sort.asp
-        pass
+        pokemons.sort()
+        print(pokemons)
     elif choice == '3':
         # https://www.w3schools.com/python/python_lists_sort.asp
-        pass
+        pokemons.sort(reverse = True)
+        print(pokemons)
     elif choice == '4':
         # https://www.w3schools.com/python/python_lists_comprehension.asp
         # https://www.w3schools.com/python/ref_string_startswith.asp
-        pass
+        name = input("Enter pokemon's name: ")
+        newlist = []
+        for x in pokemons:
+            if name in x:
+                newlist.append(x)
+        print(newlist)
+
     elif choice == '5':
         # https://www.w3schools.com/python/python_lists_comprehension.asp
-        pass
+        leng = int(input("How many letters are in the name? "))
+        result = []
+        for x in pokemons:
+            if len(x) == leng:
+                result.append(x)
+        print("It is may be: ", result)
     elif choice == '6':
         print("Exiting")
         break
