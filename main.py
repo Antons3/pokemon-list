@@ -20,7 +20,8 @@ while True:
     print("3. Sort by Z-A")
     print("4. Search by name")
     print("5. Search by length of name")
-    print("6. Exit")
+    print("6. Pagination")
+    print("7. Exit")
 
     choice = input("Enter your choice (1-6): ")
 
@@ -54,7 +55,11 @@ while True:
             if len(x) == leng:
                 result.append(x)
         print("It is may be: ", result)
+
     elif choice == '6':
+        print(pokemons[0:10])
+
+    elif choice == '7':
         print("Exiting")
         break
     else:
